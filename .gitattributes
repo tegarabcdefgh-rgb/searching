@@ -1,2 +1,28 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int n = 5;
+    string matkul[n] = {"Struktur_Data", "Algoritma", "Basis_Data", "Jaringan", "Pemrograman"};
+    int nilai[n] = {85, 90, 78, 88, 92};
+    string target;
+    int i = 0;
+    int ditemukan = 0;
+
+    cout << "Masukkan nama mata kuliah yang ingin dicari: ";
+    cin >> target;
+
+    while (i < n) {
+        if (matkul[i] == target) {
+            cout << "Nilai untuk mata kuliah " << matkul[i] << " adalah: " << nilai[i] << endl;
+            ditemukan = 1;
+        }
+        i++;
+    }
+
+    if (ditemukan == 0) {
+        cout << "Mata kuliah " << target << " tidak ditemukan." << endl;
+    }
+
+    return 0;
+}
